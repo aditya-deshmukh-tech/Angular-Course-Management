@@ -1,0 +1,36 @@
+
+
+<div class="card acm-card" >
+    <div class="card-header">courseList <div *ngIf = '!courses' class="spinner-grow text-success loading" style = "float: right;"></div>
+  </div>
+    <div class="card-body">
+
+      <div *ngIf = 'errorMessege' class ="alert alert-danger">
+        {{errorMessege}}
+      </div>
+            <table class="table" *ngIf = 'courses'>
+              <thead class="thead-dark">
+                <tr>
+                  <th>Image</th>
+                  <th>CourseName</th>
+                  <th>Trainer</th>
+                  <th>Next batch Date</th>
+                  <th>Price</th>
+                  <th>Rating</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor = 'let course of courses' [routerLink]="['/coursedetails',course.courseId]" style="cursor: pointer;">
+                  <td><img [src]= "course.imageUrl" alt="" width="50"></td>
+                  <td>{{course.courseName | uppercase}}</td>
+                  <td>{{course.trainer | uppercase}}</td>
+                  <td>{{course.nextBatchDate | date : 'dd-MMM-yyyy'}}</td>
+                  <td>{{course.price | currency : 'INR'}}</td>
+                  <td>
+                    <app-star [rating]='course.starRating' (starClick)='onStarClicked($event)'></app-star>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+  </div>
+  </div>

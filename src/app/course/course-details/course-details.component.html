@@ -1,0 +1,84 @@
+
+
+<div class="card acm-card" *ngIf = 'course'>
+    <div class="card-header">
+        <h2>Course Details</h2>
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-sm-8">
+                <div class="row">
+                    <div class="col-sm-3">
+                      Course Name :
+                    </div>
+                    <div class="col-sm-9">
+                      {{course.courseName}}
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      Course courseCode :
+                    </div>
+                    <div class="col-sm-9">
+                      {{course.courseCode}}
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      Course trainer :
+                    </div>
+                    <div class="col-sm-9">
+                      {{course.trainer}}
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      Course nextBatchDate :
+                    </div>
+                    <div class="col-sm-9">
+                      {{course.nextBatchDate}}
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      Course price :
+                    </div>
+                    <div class="col-sm-9">
+                      {{course.price}}
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      Course description :
+                    </div>
+                    <div class="col-sm-9">
+                      {{course.description | summary : showMore}}
+                      <button class="btn btn-primary" (click)= 'showMoreText()'>Show {{showMore ? 'less' : 'more'}}</button>
+                    </div>
+                  </div>
+                  <hr>
+            </div>
+               <div class="col-sm-4">
+                <img [src]="course.imageUrl" style="width:150px;
+                position: absolute;
+                margin: auto;
+                left: 0;
+                right: 0;
+                top: 0;
+                bottom: 0;">
+            </div>
+          </div>
+    </div>
+    <div class="card-footer text-right">
+        <button type="button" class="btn btn-primary acm-button" [routerLink] = "['/courses']">back</button>
+        <button type="button" class="btn btn-warning acm-button"[routerLink] = "['/editcourse',course.courseId]">Edit</button>
+        <button type="button" class="btn btn-danger acm-button" (click)="deleteCourse()">Delete</button>
+
+    </div>
+  </div>
+  

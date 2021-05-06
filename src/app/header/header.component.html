@@ -1,0 +1,25 @@
+
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <!-- Brand/logo -->
+  <a class="navbar-brand" href="#">ACM</a>
+  
+  <!-- Links -->
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link" [routerLink]="['/home']" routerLinkActive='active'>Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" [routerLink]="['/courses']" routerLinkActive='active'>Courses</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/editcourse','new']" routerLinkActive='active'>Add course</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link acm-link text-right	" (click) = 'logout()'>LogOut</a>
+      </li>
+  </ul>
+</nav>
+
+
+

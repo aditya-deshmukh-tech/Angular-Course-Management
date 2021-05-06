@@ -1,0 +1,45 @@
+<div class="card acm-card admin-login">
+    <div class="card-header text-center font-weight-bold">Login</div>
+    <div class="card-body">
+        <form #form='ngForm' (ngSubmit) = 'login(form)'>
+          <div *ngIf = 'errorMes' class="alert alert-danger">
+             {{errorMes}}
+          </div>
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" 
+            minlength="3"
+            required
+            ngModel
+            #emailVar=ngModel>
+            <div *ngIf = 'emailVar.touched && !emailVar.value' class="alert alert-danger">
+              please enter email
+          </div>
+          <div *ngIf = 'emailVar.touched && emailVar.errors && emailVar.errors.minlength' class="alert alert-danger">
+            please enter more than {{emailVar.errors.minlength.requiredLength}} characters..
+        </div>
+          </div>
+          <div class="form-group">
+            <label for="pwd">Password:</label>
+            <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd"
+            minlength="3"
+            required
+            ngModel
+            #password=ngModel>
+            <div *ngIf = 'password.touched && !password.value' class="alert alert-danger">
+              please enter password
+          </div>
+          <div *ngIf = 'password.touched && password.errors && password.errors.minlength' class="alert alert-danger">
+              please enter more than {{password.errors.minlength.requiredLength}} characters..
+          </div>
+          </div>
+          <div class= "text-center">
+            <button type="submit" class="btn btn-primary">Submit <div *ngIf = 'loadButton' class="spinner-border text-success loading"></div>
+            </button>
+          </div>
+          
+        </form>
+      
+    </div>
+    <div class="card-footer">Dont have account <a class ="acm-card" [routerLink]="['/signup']">sign up</a> here</div>
+  </div>

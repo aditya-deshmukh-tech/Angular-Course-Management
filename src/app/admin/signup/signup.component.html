@@ -1,0 +1,39 @@
+<div class="card acm-card admin-login">
+    <div class="card-header text-center font-weight-bold">Signup</div>
+    <div class="card-body">
+        <form [formGroup]='form' (ngSubmit)='signup()'>
+          <div class="form-group">
+            <label for="email">set Email:</label>
+            <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" formControlName='email'>
+            <div *ngIf = 'form.controls.email.errors && form.controls.email.touched && form.controls.email.errors.required' class="alert alert-danger">
+              please enter email
+          </div>
+          <div *ngIf = 'form.controls.email.errors && form.controls.email.touched && form.controls.email.errors.minlength' class="alert alert-danger">
+            please enter email more than {{form.controls.email.errors.minlength.requiredLength}}
+        </div>
+        <div *ngIf = 'form.controls.email.errors && form.controls.email.touched && form.controls.email.errors.space' class="alert alert-danger">
+          space is not allowed 
+      </div>
+          </div>
+          <div class="form-group">
+            <label for="pwd">set Password:</label>
+            <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd" formControlName='password'>
+            <div *ngIf = 'form.controls.password.errors && form.controls.password.touched && form.controls.password.errors.required' class="alert alert-danger">
+              please enter password
+          </div>
+          <div *ngIf = 'form.controls.password.errors && form.controls.password.touched && form.controls.password.errors.minlength' class="alert alert-danger">
+            please enter email more than {{form.controls.password.errors.minlength.requiredLength}}
+        </div>
+        <div *ngIf = 'form.controls.password.errors && form.controls.password.touched && form.controls.password.errors.space' class="alert alert-danger">
+          space is not allowed
+      </div>
+          </div>
+          <div class= "text-center">
+            <button type="submit" class="btn btn-primary" [disabled]='form.invalid' (click) = 'load()'>Submit <div *ngIf = 'loadButton' class="spinner-border text-success loading"></div></button>
+          </div>
+          
+        </form>
+      
+    </div>
+    <div class="card-footer">already have account <a class="acm-card" [routerLink]="['/login']"> login here </a></div>
+  </div>

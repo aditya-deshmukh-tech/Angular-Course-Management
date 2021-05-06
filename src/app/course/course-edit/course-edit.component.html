@@ -1,0 +1,72 @@
+<div class="card acm-card">
+    <div class="card-header">
+      <h3> {{headerValue}} </h3>
+    </div>
+  
+    <div class="card-body">
+      <div class="row">
+        <div class="col-sm-6">
+            <form [formGroup]='courseForm' (ngSubmit) = 'submitCourse()'>
+  
+              <div class="form-group">
+                <label>Course Name :</label>
+                <input type="text"
+                       class="form-control"
+                       formControlName='courseName'>
+              </div>
+              <div class="form-group">
+                <label>courseCode :</label>
+                <input type="text"
+                       class="form-control"
+                       formControlName='courseCode'>
+              </div>
+              <div class="form-group">
+                <label>trainer :</label>
+                <input type="text"
+                       class="form-control"
+                       formControlName='trainer'>
+              </div>
+              <div class="form-group">
+                <label>nextBatchDate :</label>
+                <input type="text"
+                       class="form-control"
+                       formControlName='nextBatchDate'>
+              </div>
+              <div class="form-group">
+                <label>price :</label>
+                <input type="text"
+                       class="form-control"
+                       formControlName='price'>
+              </div>
+              <div class="form-group">
+                <label>starRating :</label>
+                <input type="text"
+                       class="form-control"
+                       formControlName='starRating'>
+              </div>
+              
+              <div class="form-group">
+                  
+                <label>description :</label>
+                
+                <input type="text"
+                       class="form-control "
+                       formControlName='description'>
+                      
+              </div>
+              <div class="form-group">
+                <label>imageUrl :</label>
+                <input type="text"
+                       class="form-control"
+                       formControlName='imageUrl'>
+              </div>
+              <button type="submit" class="btn btn-primary">{{headerValue}}</button>
+            </form>
+        </div>
+      </div>
+    </div>
+    <div class="card-footer">
+      <button type="button" class="btn btn-primary acm-button" [routerLink] = "['/courses']">cancel</button>
+
+    </div>
+</div>

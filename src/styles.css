@@ -1,0 +1,57 @@
+/* You can add global styles to this file, and also import other style files */
+svg#clouds {
+    position: fixed;
+    bottom: -160px;
+    left: -230px;
+    z-index: -10;
+    width: 1920px;
+}
+
+.fd{
+  margin-left: 450px;
+  height: 400px;
+  width: 500px;
+}
+   
+#fdd2{
+  width:'70%';
+  margin-top: 50px;
+  margin-left: auto;
+}
+
+#course{
+  width: 700px;
+  position: relative;
+  margin-left: 250px;
+}
+
+.acm-card {
+  width: 70%;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+
+.admin-login{
+  width:500px;
+  height: 450px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.acm-link{
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.acm-card:hover{
+  text-decoration: none;
+}
+
+.loading{
+  width: 20px;
+  height: 20px;
+}
